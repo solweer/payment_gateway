@@ -45,29 +45,31 @@ export default function Dashboard() {
 
   if (!isAuthenticated) {
     return (
-        <div className="justify-self-center p-6 bg-white shadow-md rounded-lg max-w-sm">
-          <h1 className="text-xl font-bold mb-4">🔒 Enter Access Key</h1>
-          <input
-            type="password"
-            value={accessKey}
-            onChange={(e) => setAccessKey(e.target.value)}
-            className="border p-2 w-full rounded-md"
-            placeholder="Enter access key"
-          />
-          <button
-            onClick={handleLogin}
-            className="mt-4 w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
-          >
-            Submit
-          </button>
-          {error && <p className="text-red-600 mt-2">{error}</p>}
-        </div>
+      <div className="justify-self-center p-6 bg-white shadow-md rounded-lg max-w-sm">
+        <h1 className="text-xl font-bold mb-4">🔒 Enter Access Key</h1>
+        <input
+          type="password"
+          value={accessKey}
+          onChange={(e) => setAccessKey(e.target.value)}
+          className="border p-2 w-full rounded-md"
+          placeholder="Enter access key"
+        />
+        <button
+          onClick={handleLogin}
+          className="mt-4 w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700"
+        >
+          Submit
+        </button>
+        {error && <p className="text-red-600 mt-2">{error}</p>}
+      </div>
     );
   }
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">📋 Form Responses</h1>
+      <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+        📋 Form Responses
+      </h1>
       {responses.length === 0 ? (
         <p className="text-gray-600 text-center">No responses found.</p>
       ) : (
@@ -82,6 +84,7 @@ export default function Dashboard() {
                 <th className="px-4 py-3">Country</th>
                 <th className="px-4 py-3">Work Experience</th>
                 <th className="px-4 py-3">Allotment</th>
+                <th className="px-4 py-3">PaymentID</th>
                 <th className="px-4 py-3">Created At</th>
               </tr>
             </thead>
@@ -89,7 +92,9 @@ export default function Dashboard() {
               {responses.map((response, index) => (
                 <tr
                   key={response.id}
-                  className={`hover:bg-gray-100 transition ${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
+                  className={`hover:bg-gray-100 transition ${
+                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  }`}
                 >
                   <td className="px-4 py-3">{response.name}</td>
                   <td className="px-4 py-3">{response.address}</td>
@@ -98,7 +103,10 @@ export default function Dashboard() {
                   <td className="px-4 py-3">{response.country}</td>
                   <td className="px-4 py-3">{response.workExperience}</td>
                   <td className="px-4 py-3">{response.allotment}</td>
-                  <td className="px-4 py-3 text-gray-600">{new Date(response.created_at).toLocaleString()}</td>
+                  <td className="px-4 py-3">{response.paymentID}</td>
+                  <td className="px-4 py-3 text-gray-600">
+                    {new Date(response.created_at).toLocaleString()}
+                  </td>
                 </tr>
               ))}
             </tbody>
