@@ -84,7 +84,7 @@ export default function Dashboard() {
                 <th className="px-4 py-3">Country</th>
                 <th className="px-4 py-3">Work Experience</th>
                 <th className="px-4 py-3">Allotment</th>
-                <th className="px-4 py-3">PaymentID</th>
+                <th className="px-4 py-3">PaymentId</th>
                 <th className="px-4 py-3">Created At</th>
               </tr>
             </thead>
@@ -103,7 +103,7 @@ export default function Dashboard() {
                   <td className="px-4 py-3">{response.country}</td>
                   <td className="px-4 py-3">{response.workExperience}</td>
                   <td className="px-4 py-3">{response.allotment}</td>
-                  <td className="px-4 py-3">{response.paymentID}</td>
+                  <td className="px-4 py-3">{response.paymentId}</td>
                   <td className="px-4 py-3 text-gray-600">
                     {new Date(response.created_at).toLocaleString()}
                   </td>

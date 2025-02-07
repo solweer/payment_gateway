@@ -46,9 +46,9 @@ export default function WorkAllotmentForm() {
     }
 
     const allotmentPrices = {
-      below_5: 30000000, // 3L in paise
-      _5to10: 55000000,  // 5.5L in paise
-      _10to15: 90000000, // 9L in paise
+      below_5: 300000, // 3L in paise
+      _5to10: 550000,  // 5.5L in paise
+      _10to15: 900000, // 9L in paise
     };
 
     const amount = allotmentPrices[formData.allotment];
