@@ -47,8 +47,8 @@ export default function WorkAllotmentForm() {
 
     const allotmentPrices = {
       below_5: 30000000, // 3L in paise
-      5_10: 55000000,  // 5.5L in paise
-      10_15: 90000000, // 9L in paise
+      _5to10: 55000000,  // 5.5L in paise
+      _10to15: 90000000, // 9L in paise
     };
 
     const amount = allotmentPrices[formData.allotment];
@@ -146,8 +146,8 @@ export default function WorkAllotmentForm() {
           >
             <option value="">Select an option</option>
             <option value="below_5">Below 5K</option>
-            <option value="5_10">5K to 10K</option>
-            <option value="10_15">10K to 15K</option>
+            <option value="_5to10">5K to 10K</option>
+            <option value="_10to15">10K to 15K</option>
           </select>
         </div>
 
